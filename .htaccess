@@ -1,3 +1,6 @@
+Header set Access-Control-Allow-Origin "*"
+Header set Access-Control-Allow-Methods "*"
+
 RewriteEngine On
 RewriteRule ^api/([a-z_0-9]+) api/$1.php [NC]
 RewriteRule ^api/([a-z_0-9]+)/(.*) api/$1.php/$2 [NC]
