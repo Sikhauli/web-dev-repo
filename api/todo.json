@@ -3,30 +3,30 @@
         "id": "NgoVlyDhTS",
         "title": "Make Bed",
         "description": "Use the good linen this time please",
-        "done": true
+        "done": false
     },
     {
         "id": "cQfmwlVFcz",
         "title": "Washing",
         "description": "I need to wash all my clothes and clean the living room",
-        "done": true
+        "done": false
     },
     {
         "id": "dsjiSMOnuk",
         "title": "Eat",
         "description": "You need to eat to gain some strength -> editing is working fine",
-        "done": true
+        "done": false
     },
     {
         "id": "WVVoUvGdcI",
         "title": "Soccer",
-        "description": "You need to play some game ",
-        "done": true
+        "description": "You need to play some football game",
+        "done": false
     },
     {
         "id": "NIOksTYBjJ",
         "title": "Home ",
         "description": "need to visit home for a vacation",
-        "done": true
+        "done": false
     }
 ]
