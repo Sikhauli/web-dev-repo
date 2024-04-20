@@ -1,10 +1,20 @@
 <?php
 
 class Todo {
+    public $id;
+    public $title;
+    public $description;
+    public $done;
+
     public function __construct(
-        public string $id, 
-        public string $title, 
-        public string $description = '',
-        public bool $done = false
-    ) {}
+        string $id, 
+        string $title, 
+        string $description = '', 
+        bool $done = false
+    ) {
+        $this->id = $id;
+        $this->title = $title;
+        $this->description = $description;
+        $this->done = $done;
+    }
 }

@@ -2,8 +2,9 @@
 require_once("todo.class.php");
 
 class TodoController {
+
     private const PATH = __DIR__."/todo.json";
-    private array $todos = [];
+    private $todos = [];    
 
     public function __construct() {
         $content = file_get_contents(self::PATH);
@@ -18,12 +19,12 @@ class TodoController {
             }
         }
     }
-
-    public function loadAll() : array {
-        return $this->todos;
+    
+    public function loadAll() {
+        return $this->todos;      
     }
 
-    public function load(string $id) : Todo | bool {
+    public function load(string $id) {
         foreach($this->todos as $todo) {
             if ($todo->id == $id) {
                 return $todo;
@@ -32,20 +33,33 @@ class TodoController {
         return false;
     }
 
-    public function create(Todo $todo) : bool {
+    public function create(Todo $todo) {
+        $this->todos[] = $todo;
+        return $this->saveTodosToFile();
+    }
+
+    private function saveTodosToFile() {
+        $json = json_encode($this->todos, JSON_PRETTY_PRINT);
+        return file_put_contents(self::PATH, $json) !== false;
+    }
+
+    public function update(string $id, Todo $todo) {
         // implement your code here
         return true;
     }
 
-    public function update(string $id, Todo $todo) : bool {
+    public function delete(string $id) {
         // implement your code here
         return true;
     }
 
-    public function delete(string $id) : bool {
-        // implement your code here
-        return true;
+    public function get() {
+        $content = file_get_contents(self::PATH);
+        if ($content === false) {
+            throw new Exception(self::PATH . " does not exist");
+        }
+        $dataArray = json_decode($content, true);
+        return $dataArray;
     }
 
-    // add any additional functions you need below
 }
