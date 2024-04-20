@@ -44,14 +44,24 @@ class TodoController {
     }
 
     public function update(string $id, Todo $todo) {
-        // implement your code here
-        return true;
+        foreach ($this->todos as &$existingTodo) {
+            if ($existingTodo->id === $id) {
+                $existingTodo = $todo;
+                return $this->saveTodosToFile();
+            }
+        }
+        return false;
     }
 
     public function delete(string $id) {
-        // implement your code here
-        return true;
-    }
+        foreach ($this->todos as $key => $existingTodo) {
+            if ($existingTodo->id === $id) {
+                unset($this->todos[$key]);
+                return $this->saveTodosToFile();
+            }
+        }
+        return false;
+}
 
     public function get() {
         $content = file_get_contents(self::PATH);

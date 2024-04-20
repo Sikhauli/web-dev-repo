@@ -1,5 +1,20 @@
 [
-    {"id":"NgoVlyDhTS", "title": "Make Bed", "description": "Use the good linen this time please", "done": true},
-    {"id":"skHMaKsqOb", "title": "Pack Dishwasher", "description": "", "done": false},
-    {"id":"YgnovUnGmB", "title": "Wash Dishes", "description": "Hand wash the Royal Albert tea set",  "done": false}
+    {
+        "id": "NgoVlyDhTS",
+        "title": "Make Bed",
+        "description": "Use the good linen this time please",
+        "done": true
+    },
+    {
+        "id": "cQfmwlVFcz",
+        "title": "Washing",
+        "description": "I need to wash all my clothes and clean the living room",
+        "done": false
+    },
+    {
+        "id": "dsjiSMOnuk",
+        "title": "Eat",
+        "description": "You need to eat to gain some strength",
+        "done": false
+    }
 ]

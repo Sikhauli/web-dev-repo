@@ -65,10 +65,46 @@ try {
             }
             break;
         case 'PUT':
-            //implement your code here
+            parse_str($body, $putParams);
+            $id = isset($putParams['id']) ? $putParams['id'] : '';
+            $data = json_decode($body, true);
+            if ($data === null || !$id) {
+                http_response_code(400);
+                echo json_encode(['error' => 'Invalid data or missing ID']);
+                break;
+            }
+            $todo = new Todo(
+                $id,
+                isset($data['title']) ? $data['title'] : '',
+                isset($data['description']) ? $data['description'] : '',
+                isset($data['done']) ? $data['done'] : false
+            );
+            $success = $controller->update($id, $todo);
+            if ($success) {
+                http_response_code(200);
+                echo json_encode(['message' => 'TODO item updated']);
+                die();
+            } else {
+                http_response_code(500);
+                echo json_encode(['error' => 'Failed to update TODO item']);
+            }
             break;
         case 'DELETE':
-            //implement your code here
+            if ($path[$pathCount - 2] == 'todo' && isset($path[$pathCount - 1]) && strlen($path[$pathCount - 1])) {
+                $id = $path[$pathCount - 1];
+                $success = $controller->delete($id);
+                if ($success) {
+                    http_response_code(200);
+                    echo json_encode(['message' => 'TODO item deleted']);
+                    die();
+                } else {
+                    http_response_code(500);
+                    echo json_encode(['error' => 'Failed to delete TODO item']);
+                }
+            } else {
+                http_response_code(400);
+                echo json_encode(['error' => 'Missing or invalid ID']);
+            }
             break;
         default:
             http_response_code(501);
