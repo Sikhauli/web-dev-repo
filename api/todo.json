@@ -9,12 +9,24 @@
         "id": "cQfmwlVFcz",
         "title": "Washing",
         "description": "I need to wash all my clothes and clean the living room",
-        "done": false
+        "done": true
     },
     {
         "id": "dsjiSMOnuk",
         "title": "Eat",
-        "description": "You need to eat to gain some strength",
-        "done": false
+        "description": "You need to eat to gain some strength -> editing is working fine",
+        "done": true
+    },
+    {
+        "id": "WVVoUvGdcI",
+        "title": "Soccer",
+        "description": "You need to play some game ",
+        "done": true
+    },
+    {
+        "id": "NIOksTYBjJ",
+        "title": "Home ",
+        "description": "need to visit home for a vacation",
+        "done": true
     }
 ]

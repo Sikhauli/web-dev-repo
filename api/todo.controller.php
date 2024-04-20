@@ -44,14 +44,19 @@ class TodoController {
     }
 
     public function update(string $id, Todo $todo) {
+        if (!$id || !$todo->id || $id !== $todo->id) {
+            return false; 
+        }
+
         foreach ($this->todos as &$existingTodo) {
             if ($existingTodo->id === $id) {
                 $existingTodo = $todo;
                 return $this->saveTodosToFile();
             }
         }
-        return false;
+        return false; 
     }
+
 
     public function delete(string $id) {
         foreach ($this->todos as $key => $existingTodo) {
