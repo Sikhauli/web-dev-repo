@@ -33,14 +33,14 @@ class TodoController {
         return false;
     }
 
-    public function create(Todo $todo) {
-        $this->todos[] = $todo;
-        return $this->saveTodosToFile();
-    }
-
     private function saveTodosToFile() {
         $json = json_encode($this->todos, JSON_PRETTY_PRINT);
         return file_put_contents(self::PATH, $json) !== false;
+    }
+
+    public function create(Todo $todo) {
+        $this->todos[] = $todo;
+        return $this->saveTodosToFile();
     }
 
     public function update(string $id, Todo $todo) {
@@ -56,7 +56,6 @@ class TodoController {
         }
         return false; 
     }
-
 
     public function delete(string $id) {
         foreach ($this->todos as $key => $existingTodo) {
@@ -74,6 +73,9 @@ class TodoController {
             throw new Exception(self::PATH . " does not exist");
         }
         $dataArray = json_decode($content, true);
+        if ($dataArray === null) {
+        throw new Exception("Failed to decode JSON data");
+        }
         return $dataArray;
     }
 
