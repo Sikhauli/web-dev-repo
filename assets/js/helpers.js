@@ -72,7 +72,7 @@ function editCancel(todo) {
 function createTodo() {
     let todosElement = document.getElementById("todos");
     let todo = {id: generateId(), title: '', description: '', done: false, new: true};
-    todosElement.insertBefore(generateTodo(todo), todosElement.firstChild.nextSibling.nextSibling);
+    todosElement.prepend(generateTodo(todo));
     setEditState(todo, true);
     masonry();
 }
@@ -139,7 +139,7 @@ function masonry() {
 }
 
 function drawCreateNewTodo() {
-    let todosElement = document.getElementById("todos");
+    let todosElement = document.getElementById("add-todo");
 
     let todoCardWrapperElement = document.createElement("div");
     todoCardWrapperElement.className = "col-sm-6 col-md-4 col-lg-3 py-3";

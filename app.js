@@ -9,16 +9,16 @@ function putTodo(todo) {
     })
         .then(response => {
             if (!response.ok) {
-                showToastMessage('Failed to update TODO item');
+                showToastMessage('Failed to update Todo item');
             }
             return response.json();
         })
         .then(updatedTodo => {
-            showToastMessage('TODO item updated:');
+            showToastMessage('Todo item updated');
         })
         .catch(error => {
-            console.error('Error updating TODO item:', error);
-            showToastMessage('Failed to update TODO item...');
+            console.error('Error updating Todo item:', error);
+            showToastMessage('Failed to update Todo item...');
         });
 }
 
@@ -32,16 +32,16 @@ function postTodo(todo) {
     })
         .then(response => {
             if (!response.ok) {
-                console.error('Error creating new TODO item:', response);
+                console.error('Error creating new Todo item:', response);
             }
             return response.json();
         })
         .then(newTodo => {
-            showToastMessage('New TODO item created');
+            showToastMessage('New Todo item created');
         })
         .catch(error => {
-            console.error('Error creating new TODO item:', error);
-            showToastMessage('Failed to create new TODO item...', error);
+            console.error('Error creating new Todo item:', error);
+            showToastMessage('Failed to create new Todo item...', error);
         });
 }
 
@@ -51,13 +51,13 @@ function deleteTodo(todo) {
     })
         .then(response => {
             if (!response.ok) {
-                showToastMessage('Failed to delete TODO item');
+                showToastMessage('Failed to delete Todo item');
             }
-            showToastMessage('TODO item deleted');
+            showToastMessage('Todo item deleted');
         })
         .catch(error => {
-            console.error('Error deleting TODO item:', error);
-            showToastMessage('Failed to delete TODO item...');
+            console.error('Error deleting Todo item:', error);
+            showToastMessage('Failed to delete Todo item...');
         });
 }
 

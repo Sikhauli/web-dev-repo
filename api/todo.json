@@ -1,32 +1,14 @@
 [
     {
-        "id": "NgoVlyDhTS",
-        "title": "Make Bed",
-        "description": "Use the good linen this time please",
+        "id": "MVPObpWcAw",
+        "title": "Lets see",
+        "description": "Okay it seems like ts working just fine ",
         "done": false
     },
     {
-        "id": "cQfmwlVFcz",
-        "title": "Washing",
-        "description": "I need to wash all my clothes and clean the living room",
-        "done": false
-    },
-    {
-        "id": "dsjiSMOnuk",
-        "title": "Eat",
-        "description": "You need to eat to gain some strength -> editing is working fine",
-        "done": false
-    },
-    {
-        "id": "WVVoUvGdcI",
-        "title": "Soccer",
-        "description": "You need to play some football game",
-        "done": false
-    },
-    {
-        "id": "NIOksTYBjJ",
-        "title": "Home ",
-        "description": "need to visit home for a vacation",
+        "id": "pwvLQXFKzh",
+        "title": "exercise",
+        "description": "Need to run for 5 km everyday in the morning",
         "done": false
     }
 ]
